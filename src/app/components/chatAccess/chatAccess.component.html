@@ -1,0 +1,10 @@
+<div class="container">
+  <user-picture [image]="chat.destinatary.picture" />
+  <section>
+    <div>
+      <span class="name">{{chat.destinatary.name}}</span>
+      <p *ngIf="chat.lastMessage">{{chat.lastMessage.text}}</p>
+    </div>
+    <span></span>
+  </section>
+</div>

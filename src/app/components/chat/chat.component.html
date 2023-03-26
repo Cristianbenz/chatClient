@@ -1,0 +1,15 @@
+<div *ngIf="chat" class="container">
+  <section class="chat-header">
+    <user-picture [image]="chat.destinatary.picture" />
+    <span>{{chat.destinatary.name}}</span>
+  </section>
+  <div class="messages-box">
+    <message *ngFor="let message of chat.messages" [message]="message" />
+  </div>
+  <form class="text-box" (ngSubmit)="sendMessage()">
+    <input type="text" placeholder="Send a message" name="text" [(ngModel)]="text" autocomplete="off" />
+    <button mat-fab >
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</div>

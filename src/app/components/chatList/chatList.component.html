@@ -1,0 +1,9 @@
+<section>
+  <user-header-component />
+  <search-bar (newChat)="selectNewChat($event)" />
+  <ul class="list">
+    <li *ngFor="let chat of chats" (click)="getChat(chat)">
+      <chat-access [chat]="chat" />
+    </li>
+  </ul>
+</section>

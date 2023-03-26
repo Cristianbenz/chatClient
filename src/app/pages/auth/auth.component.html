@@ -1,0 +1,7 @@
+<sign-in-form *ngIf="formType === 'signin'" />
+<sign-up-form *ngIf="formType === 'signup'" />
+<p (click)="changeForm()">
+  Or
+  <span *ngIf="formType === 'signin'">Sign Up</span>
+  <span *ngIf="formType === 'signup'">Sign In</span>
+</p>

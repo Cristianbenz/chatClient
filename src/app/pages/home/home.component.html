@@ -1,0 +1,5 @@
+<section class="home-container">
+  <chat-list class="chatList-container" (selectChat)="setChat($event)" [chats]="chats" />
+  <chat class="chat-container" *ngIf="currentChat" [chat]="currentChat" (setNewChat)="setChat($event)" (messageSended)="updateNewMessage($event)" />
+  <no-current-chat class="chat-container" *ngIf="!currentChat" />
+</section>

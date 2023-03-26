@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - 4200:4200
+    volumes:
+      - ./angular:/project
+      - /project/node_modules
