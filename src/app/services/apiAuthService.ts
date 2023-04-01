@@ -8,7 +8,7 @@ import { SignInRequest } from "../models/singInRequest";
 import { User } from "../models/user";
 import { HubService } from "./hubService";
 
-import { environment } from "src/environment/environment";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root',

@@ -5,7 +5,7 @@ import { Response } from "../models/response";
 import { User } from "../models/user";
 import { ApiAuthService } from "./apiAuthService";
 
-import { environment } from "src/environment/environment";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
