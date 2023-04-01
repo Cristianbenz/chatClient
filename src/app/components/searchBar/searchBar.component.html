@@ -1,6 +1,8 @@
-<input [(ngModel)]="name" (ngModelChange)="search()" type="text" placeholder="Search an user" />
-<ul *ngIf="users.length">
-  <li *ngFor="let user of users" (click)="addUser(user)" >
-    <contact [contact]="user" />
-  </li>
-</ul>
+<div class="container">
+  <input [(ngModel)]="name" (ngModelChange)="search()" type="text" placeholder="Search an user" />
+  <ul *ngIf="users.length" class="predictList">
+    <li *ngFor="let user of users" (click)="addUser(user)" >
+      <contact [contact]="user" />
+    </li>
+  </ul>
+</div>

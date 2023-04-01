@@ -1,7 +1,26 @@
-<sign-in-form *ngIf="formType === 'signin'" />
-<sign-up-form *ngIf="formType === 'signup'" />
-<p (click)="changeForm()">
-  Or
-  <span *ngIf="formType === 'signin'">Sign Up</span>
-  <span *ngIf="formType === 'signup'">Sign In</span>
-</p>
+<div class="page-container">
+  <section class="informationSection">
+    <h1>Real Time Chat App</h1>
+    <p></p>
+    <ul class="links">
+      <li>
+        <a href="https://github.com/Cristianbenz/chatClient" target="_blank">Repository</a>
+      </li>
+      <li>
+        <a href="https://github.com/Cristianbenz?tab=repositories" target="_blank" >More projects</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/cristian-benitez/" target="_blank">Linkedin</a>
+      </li>
+    </ul>
+  </section>
+  <section class="formSection">
+    <sign-in-form *ngIf="formType === 'signin'" />
+    <sign-up-form *ngIf="formType === 'signup'" />
+    <p (click)="changeForm()">
+      Or
+      <span *ngIf="formType === 'signin'">Sign Up</span>
+      <span *ngIf="formType === 'signup'">Sign In</span>
+    </p>
+  </section>
+</div>

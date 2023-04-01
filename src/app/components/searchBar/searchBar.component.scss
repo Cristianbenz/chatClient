@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+}
+
+input {
+  width: 90%;
+  padding: 3px;
+}
+
+.predictList {
+  background-color: aliceblue;
+  position: absolute;
+  z-index: 800;
+  padding-inline-start: 0;
+  list-style-type: none;
+  width: 80%;
+  background-color: aqua;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 10px;
+}

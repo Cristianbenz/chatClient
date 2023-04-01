@@ -1,13 +1,18 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { ChatAccess } from 'src/app/models/chatAccess';
 import { Contact } from 'src/app/models/contact';
+import { ApiAuthService } from 'src/app/services/apiAuthService';
 import { ApiContactService } from 'src/app/services/apiContactService';
 @Component({
   selector: 'search-bar',
-  templateUrl: './searchBar.component.html'
+  templateUrl: './searchBar.component.html',
+  styleUrls: ['./searchBar.component.scss']
 })
 export class SearchBarComponent {
+  private _authService = inject(ApiAuthService);
   private _contactService = inject(ApiContactService);
   @Output() newChat = new EventEmitter<Contact>();
+  private _user = this._authService.getUser;
   public name = '';
   public users: Contact[] = [];
 
@@ -16,7 +21,7 @@ export class SearchBarComponent {
       this._contactService.findContact(this.name)
       .subscribe(response => {
         if(response.success === 1) {
-          this.users = response.data
+          this.users = response.data.filter((contact : ChatAccess) => contact.id !== this._user?.id)
         }
       })
     } else {
@@ -30,5 +35,7 @@ export class SearchBarComponent {
       picture,
       name
     })
+    this.name = '';
+    this.users = []
   }
 }

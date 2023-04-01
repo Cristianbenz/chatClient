@@ -1,4 +1,4 @@
-import { Component, Input, inject, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, inject, EventEmitter, Output } from '@angular/core';
 import { Chat } from 'src/app/models/chat';
 import { Message } from 'src/app/models/message';
 import { SendMessageRequest } from 'src/app/models/sendMessageRequest';

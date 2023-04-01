@@ -60,4 +60,9 @@ export class HomeComponent implements OnInit {
       });
   }
 
+  addNewChat(newChat: Chat) {
+    this.getUserChats()
+    this.currentChat = newChat;
+  }
+
 }

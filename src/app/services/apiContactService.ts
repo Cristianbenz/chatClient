@@ -3,12 +3,14 @@ import { Injectable, inject} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Response } from '../models/response';
 
+import { environment } from "src/environment/environment";
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiContactService {
   private http = inject(HttpClient);
-  private readonly url = 'http://localhost:5196/api/User';
+  private readonly url = `${environment.apiUrl}/api/User`;
 
 
   findContact(name: string): Observable<Response> {

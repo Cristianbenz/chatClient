@@ -5,6 +5,7 @@ import { Message } from "../models/message";
 import { Response } from "../models/response";
 import { SendMessageRequest } from "../models/sendMessageRequest";
 import { ApiAuthService } from "./apiAuthService";
+import { environment } from "src/environment/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,7 @@ export class ApiMessageService {
   private readonly _http = inject(HttpClient)
   private readonly _authService = inject(ApiAuthService)
   private readonly _user = this._authService.getUser;
-  private readonly _url = 'http://localhost:5196/api/Messages'
+  private readonly _url = `${environment.apiUrl}/api/Messages`
   private _httpOptions = {
     headers: new HttpHeaders({
       content: 'application/json'

@@ -3,11 +3,13 @@
     <user-picture [image]="chat.destinatary.picture" />
     <span>{{chat.destinatary.name}}</span>
   </section>
-  <div class="messages-box">
-    <message *ngFor="let message of chat.messages" [message]="message" />
-  </div>
+  <ul class="messages-box">
+    <li>
+      <message *ngFor="let message of chat.messages" [message]="message" />
+    </li>
+  </ul>
   <form class="text-box" (ngSubmit)="sendMessage()">
-    <input type="text" placeholder="Send a message" name="text" [(ngModel)]="text" autocomplete="off" />
+    <input matInput type="text" placeholder="Send a message" name="text" [(ngModel)]="text" autocomplete="off" />
     <button mat-fab >
       <mat-icon>send</mat-icon>
     </button>

@@ -34,7 +34,7 @@ $chatClient-theme: mat.define-light-theme((
 @include mat.all-component-themes($chatClient-theme);
 
 body, html {
-  width: 1024px;
+  width: 1240px;
   height: 100%;
   margin: auto;
   padding: 0px;
@@ -46,4 +46,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: #D8DBE2;
+}
+
+
+input {
+  border-radius: 10px;
+  border: none;
+  padding: 4px;
+  height: 30px;
 }

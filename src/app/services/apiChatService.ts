@@ -5,12 +5,14 @@ import { Response } from "../models/response";
 import { User } from "../models/user";
 import { ApiAuthService } from "./apiAuthService";
 
+import { environment } from "src/environment/environment";
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiChatService {
   private readonly _http = inject(HttpClient)
-  private readonly _url = 'http://localhost:5196/api/Chat';
+  private readonly _url = `${environment.apiUrl}/api/Chat`;
   private authService = inject(ApiAuthService);
   private _user : User | null = null;
   private _httpOptions = {

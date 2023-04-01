@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 
+import { environment } from "src/environment/environment";
+
 @Injectable({
   providedIn: 'root',
 })
@@ -8,7 +10,7 @@ export class HubService {
   public hub: HubConnection;
   constructor() {
     this.hub = new HubConnectionBuilder()
-      .withUrl('http://localhost:5196/chat')
+      .withUrl(`${environment.apiUrl}/chat`)
       .build();
   }
 

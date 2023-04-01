@@ -4,7 +4,8 @@ import { ApiAuthService } from "src/app/services/apiAuthService";
 
 @Component({
     selector: "sign-in-form",
-    templateUrl: "./signInForm.component.html"
+    templateUrl: "./signInForm.component.html",
+    styleUrls: ['./signInForm.component.scss']
 })
 export class SignInFormComponent {
     formBuilder = inject(FormBuilder);

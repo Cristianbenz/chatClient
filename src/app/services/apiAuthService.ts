@@ -8,13 +8,15 @@ import { SignInRequest } from "../models/singInRequest";
 import { User } from "../models/user";
 import { HubService } from "./hubService";
 
+import { environment } from "src/environment/environment";
+
 @Injectable({
   providedIn: 'root',
 })
 export class ApiAuthService {
   private readonly _http = inject(HttpClient);
   private readonly _hubService = inject(HubService);
-  private readonly url = 'http://localhost:5196/api/Auth'
+  private readonly url = `${environment.apiUrl}/api/Auth`
   private httpOptions = {
     headers: new HttpHeaders({
       content: 'application/json'
