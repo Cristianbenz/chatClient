@@ -1,4 +1,4 @@
-
+@import '../../styles/_palette';
 .message-inner {
   padding: 4px 0;
 }
@@ -7,8 +7,9 @@
   border-radius: 10px;
   width: fit-content;
   max-width: 400px;
-  background-color: #659157;  
+  background-color: map-get($secondary, 700);  
   padding: 1px 12px;
+  color: map-get($secondary, "contrast", 700);
 }
 
 .self {
@@ -17,6 +18,7 @@
   align-items: flex-end;
 
   div {
-    background-color: #A9BCD0;
+    background-color: map-get($secondary, 200);
+    color: map-get($secondary, "contrast", 200);
   }
 }
