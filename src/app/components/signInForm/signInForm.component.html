@@ -4,13 +4,19 @@
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput type="email" formControlName="email" /> 
+      <mat-error>
+        <span class="error">{{emailError()}}</span>
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput type="password" formControlName="password" /> 
+      <input matInput type="password" formControlName="password" />
+      <mat-error>
+        <span class="error">{{pwdError()}}</span>
+      </mat-error>
     </mat-form-field>
   </div>
-  <button mat-raised-button>Sign In</button>
+  <button mat-raised-button [disabled]="!signInForm.valid">Sign In</button>
 </form>

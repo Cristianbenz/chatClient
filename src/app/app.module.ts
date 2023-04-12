@@ -9,6 +9,7 @@ import { NgOptimizedImage } from '@angular/common'
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AuthComponent } from './pages/auth/auth.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -52,7 +53,8 @@ import { UserHeaderComponent } from './components/userHeader/userHeader.componen
     MatButtonModule,
     BrowserAnimationsModule,
     NgOptimizedImage,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
