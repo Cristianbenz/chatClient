@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
+import SortChats from 'src/app/helpers/chatListSort';
 import { Chat } from 'src/app/models/chat';
 import { ChatAccess } from 'src/app/models/chatAccess';
 import { Message } from 'src/app/models/message';
@@ -30,18 +31,23 @@ export class HomeComponent implements OnInit {
   }
 
   receiveMessage(message: Message) {
-    if(this.currentChat?.id === message.chatId) {
-      this.currentChat.messages.push(message);
+    const CHAT = this.chats.find(chat => chat.id === message.chatId);
+    if(CHAT) {
+      CHAT.lastMessage = message;
+      this.currentChat?.id === message.chatId && this.currentChat.messages.push(message);
+      this.chats = SortChats(this.chats, CHAT);
     }
   }
 
   updateNewMessage(message: Message) {
-    console.log(this.currentChat, message.chatId)
     if(this.currentChat?.id === message.chatId) {
       this.currentChat.messages.push(message);
     }
     const CHAT = this.chats.find(chat => chat.id === message.chatId)
-    if(CHAT) CHAT.lastMessage = message;
+    if(CHAT) {
+      CHAT.lastMessage = message;
+      this.chats = SortChats(this.chats, CHAT);
+    }
   }
 
   setChat(selectedChat : Chat) {
