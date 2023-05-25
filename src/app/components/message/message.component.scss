@@ -10,6 +10,7 @@
   background-color: map-get($secondary, 700);  
   padding: 1px 12px;
   color: map-get($secondary, "contrast", 700);
+  word-break: break-all;
 }
 
 .self {

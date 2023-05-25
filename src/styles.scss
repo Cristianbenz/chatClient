@@ -37,10 +37,8 @@ $chatClient-theme: mat.define-light-theme((
 }
 
 body, html {
-  width: 1240px;
-  height: 100%;
-  margin: auto;
-  padding: 0px;
+  max-width: 1240px;
+  margin: 0 auto;
   background-color: #414061;
   overflow-x: hidden;
 }
@@ -50,7 +48,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: map-get($secondary, 500);
 }
-
 
 input {
   border-radius: 10px;
