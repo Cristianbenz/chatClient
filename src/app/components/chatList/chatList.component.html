@@ -1,5 +1,4 @@
 <section class="chatListContainer">
-  <user-header-component />
   <search-bar (newChat)="selectNewChat($event)" />
   <ul class="list">
     <li *ngFor="let chat of chats" (click)="getChat(chat)">
@@ -7,3 +6,4 @@
     </li>
   </ul>
 </section>
+<user-header-component />

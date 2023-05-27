@@ -1,0 +1,7 @@
+<section>
+  <img src="{{picture}}" alt="User avatar" />
+  <form (ngSubmit)="submit()">
+    <input type="file" (change)="changePhoto($event)" />
+    <button>Upload</button>
+  </form>
+</section>
