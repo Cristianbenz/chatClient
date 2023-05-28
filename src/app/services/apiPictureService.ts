@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiPictureService {
-  private _api = environment.apiUrl + 'api';
+  private _api = environment.apiUrl + '/api';
   private readonly _http = inject(HttpClient);
 
   uploadAvatar(userId: number, image: FormData): Observable<Response> {

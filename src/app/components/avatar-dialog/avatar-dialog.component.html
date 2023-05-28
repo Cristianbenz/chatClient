@@ -1,7 +1,10 @@
 <section>
   <img src="{{picture}}" alt="User avatar" />
   <form (ngSubmit)="submit()">
-    <input type="file" (change)="changePhoto($event)" />
-    <button>Upload</button>
+    <fieldset class="fileInput">
+      <span>{{pictureLoaded ? "File Loaded" : "Select/Drop File"}}</span>
+      <input type="file" (change)="changePhoto($event)" />
+    </fieldset>
+    <button mat-raised-button color="accent" >Upload</button>
   </form>
 </section>

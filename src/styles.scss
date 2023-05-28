@@ -38,6 +38,7 @@ $chatClient-theme: mat.define-light-theme((
 
 body, html {
   max-width: 1240px;
+  height: 100vh;
   margin: 0 auto;
   background-color: #414061;
   overflow-x: hidden;

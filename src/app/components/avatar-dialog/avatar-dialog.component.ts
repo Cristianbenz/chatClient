@@ -9,6 +9,7 @@ import { ApiPictureService } from 'src/app/services/apiPictureService';
   styleUrls: ['./avatar-dialog.component.scss']
 })
 export class AvatarDialogComponent {
+  public pictureLoaded: boolean = false;
   private _pictureService = inject(ApiPictureService);
   private form = new FormData();
   public picture = this.user?.avatar || '';
@@ -20,6 +21,7 @@ export class AvatarDialogComponent {
   }
 
   async changePhoto(evt: any) {
+    this.pictureLoaded = false;
     const file = evt.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -29,10 +31,18 @@ export class AvatarDialogComponent {
     this.picture = file;
     this.form.delete('picture')
     this.form.append('picture', file);
-
+    this.pictureLoaded = true;
   }
 
   submit() {
-   if(this.user && this.form.get('picture')) this._pictureService.uploadAvatar(this.user?.id, this.form);
+   if(this.user && this.form.get('picture')) {
+    console.log(this.user.id)
+    this._pictureService.uploadAvatar(this.user?.id, this.form)
+    .subscribe({
+      next: () => {
+        this.dialogRef.close();
+      }
+    });
+   };
   }
 }
