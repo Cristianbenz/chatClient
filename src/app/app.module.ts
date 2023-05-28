@@ -10,6 +10,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AuthComponent } from './pages/auth/auth.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -26,6 +27,7 @@ import { ChatAccessComponent } from './components/chatAccess/chatAccess.componen
 import { UserPictureComponent } from './components/picture/picture.component';
 import { NoCurrentChatComponent } from './components/noCurrentChat/noCurrentChat.component';
 import { UserHeaderComponent } from './components/userHeader/userHeader.component';
+import { AvatarDialogComponent } from './components/avatar-dialog/avatar-dialog.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { UserHeaderComponent } from './components/userHeader/userHeader.componen
     ChatAccessComponent,
     UserPictureComponent,
     NoCurrentChatComponent,
-    UserHeaderComponent
+    UserHeaderComponent,
+    AvatarDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { UserHeaderComponent } from './components/userHeader/userHeader.componen
     BrowserAnimationsModule,
     NgOptimizedImage,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,13 @@
-<header>
+<section class="layout">
+  <article class="userInfo">
+    <i (click)="openAvatarForm()" >
+      <img class="avatar" src="{{user?.avatar}}" alt="{{user?.name}} avatar" />
+    </i>
+    <p>{{user?.name}}</p>
+  </article>
   <button mat-fab (click)="signOut()">
     <mat-icon>
         power_settings_new
     </mat-icon>
   </button>
-</header>
+</section>
